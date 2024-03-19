@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Regular";
+  src: url(./assets/fonts/Manrope/Manrope-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url(./assets/fonts/Manrope/Manrope-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ExtraBold";
+  src: url(./assets/fonts/Manrope/Manrope-ExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "ExtraLight";
+  src: url(./assets/fonts/Manrope/Manrope-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Light";
+  src: url(./assets/fonts/Manrope/Manrope-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url(./assets/fonts/Manrope/Manrope-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url(./assets/fonts/Manrope/Manrope-SemiBold.ttf) format("truetype");
+}
+
+html {
+  --s: 100px;
+  --_g: rgba(180, 180, 180, 0) 90deg, rgba(80, 100, 100, 0.04) 0;
+  background: conic-gradient(from 90deg at 2px 2px, var(--_g)), conic-gradient(from 90deg at 1px 1px, var(--_g));
+  background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
+}
+
 /*:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
