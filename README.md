@@ -1,8 +1,9 @@
-# React + Vite
+# GatoCósmico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Regla para comentario
 
-Currently, two official plugins are available:
+ADD: Nuevo componente, funcion, página u otros.
+UPDATE: Actualización de componente, funcion, página u otro ya creado.
+FIX: Arreglo de error de lógica o ejecución.
+DEL: Al eliminar un componente, función, página u otros.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
