@@ -1,0 +1,76 @@
+import { Label, TextInput, Checkbox, Button } from "flowbite-react"
+import { useState } from "react"
+import { HiMail, HiLockClosed } from 'react-icons/hi'
+import useNavigeishon from "../../../hooks/useNavigeishon";
+import { userService } from "../../../services/user.service";
+
+export default function LoginForm(){
+    const [correo, setCorreo] = useState({value:'', state: false});
+    const [contrasena, setContrasena] = useState({value:'', state: false});
+    const navigaishon = useNavigeishon()
+
+    function updateInput(e, fnUpdate){
+        const inputValue = e.target.value
+        const none = ['$', '/', '(', ')', '*', '[', ']', '`', '´', '?', `'`,]
+        const letterYep = inputValue.includes('@')
+        const letterNope = none.some(i => inputValue.includes(i))
+
+        if(e.target.type !== 'password'){
+            if(inputValue.length > 0 && !letterNope && letterYep){
+                fnUpdate({value: inputValue , state:true })
+            }else{
+                fnUpdate({value: inputValue, state:false })
+            }
+        }else{
+            inputValue.length >= 8 ? fnUpdate({value: inputValue, state: true}) : fnUpdate({value: inputValue, state:false })
+        }
+    }
+
+    function setColorInput(input){
+        let colorsh= 'gray'
+        input.state ? colorsh = 'success' : colorsh = 'failure'
+        if(input.value.length === 0){ colorsh = 'gray' }
+        return colorsh
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        if(correo.state && contrasena.state){
+            //console.log('Campos válidos')
+            return userService.login(correo.value, contrasena.value)
+            .then(e => {
+                //console.log(`usuario: ${e}`);
+                navigaishon.checkPage('/dashboard')
+            }).catch(err => {
+                console.error(`Error: ${err}`);
+            })
+        }
+    }
+
+    return(
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className='flex md:flex-row flex-col md:gap-6 gap-3'>
+                <div>
+                    <div className="mb-2 block">
+                        <Label htmlFor="txtCorreo" value="Correo" className='text-sm' />
+                    </div>
+                    <TextInput className='' id="txtCorreo" icon={HiMail} onChange={e => updateInput(e, setCorreo)} color={setColorInput(correo)} type="email" placeholder="nombre@correo.com" required />
+                </div>
+                <div>
+                    <div className="mb-2 block">
+                        <Label htmlFor="txtContrasena" value="Contraseña" className='text-sm' />
+                    </div>
+                    <TextInput id="txtContrasena" type="password" icon={HiLockClosed} onChange={e => updateInput(e, setContrasena)} color={setColorInput(contrasena)} placeholder='********' required />
+                </div>
+            </div>
+            <div className="flex items-center justify-between">
+                <div className='flex items-center gap-2'>
+                    <Checkbox id="chbRecordar" className='hover:cursor-not-allowed' disabled />
+                    <Label htmlFor="chbRecordar">Recordar</Label>
+                </div>
+                <a className='text-sm font-light hover:underline text-cyan-700 cursor-not-allowed'>Recuperar contraseña</a>
+            </div>
+            <Button type="submit">Enviar</Button>
+        </form>
+    )
+}
