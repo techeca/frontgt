@@ -54,21 +54,21 @@ export default function LoginForm(){
                     <div className="mb-2 block">
                         <Label htmlFor="txtCorreo" value="Correo" className='text-sm' />
                     </div>
-                    <TextInput className='' id="txtCorreo" icon={HiMail} onChange={e => updateInput(e, setCorreo)} color={setColorInput(correo)} type="email" placeholder="nombre@correo.com" required />
+                    <TextInput className='' id="txtCorreo" helperText={<span className="">{correo.state ? '' : 'Correo incorrecto'}</span>} icon={HiMail} onChange={e => updateInput(e, setCorreo)} color={setColorInput(correo)} type="email" placeholder="nombre@correo.com" required />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="txtContrasena" value="Contraseña" className='text-sm' />
                     </div>
-                    <TextInput id="txtContrasena" type="password" icon={HiLockClosed} onChange={e => updateInput(e, setContrasena)} color={setColorInput(contrasena)} placeholder='********' required />
+                    <TextInput id="txtContrasena" helperText={<span className="">{contrasena.state ? '' : 'Longitud incorrecta'}</span>} type="password" icon={HiLockClosed} onChange={e => updateInput(e, setContrasena)} color={setColorInput(contrasena)} placeholder='********' required />
                 </div>
             </div>
             <div className="flex items-center justify-between">
                 <div className='flex items-center gap-2'>
-                    <Checkbox id="chbRecordar" className='hover:cursor-not-allowed' disabled />
+                    <Checkbox id="chbRecordar" className='' defaultChecked />
                     <Label htmlFor="chbRecordar">Recordar</Label>
                 </div>
-                <a className='text-sm font-light hover:underline text-cyan-700 cursor-not-allowed'>Recuperar contraseña</a>
+                <a className='text-sm font-light hover:underline text-cyan-700/50 cursor-not-allowed'>Recuperar contraseña</a>
             </div>
             <Button type="submit">Enviar</Button>
         </form>
