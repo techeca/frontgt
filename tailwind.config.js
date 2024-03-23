@@ -14,7 +14,7 @@ export default {
         semibold: ['SemiBold']
       },
       backgroundImage: {
-        'loginImage': "url('frontgt/img/loginfondo.png)"
+        'loginImage': "url('/frontgt/img/loginfondo.png)"
       }
     },
   },

@@ -11,7 +11,7 @@ import Users from './pages/Users/index.jsx';
 import Calendar from './pages/Calendar/index.jsx';
 import UserProfile from './pages/UserProfile/index.jsx';
 
-const BASEPATH = import.meta.env.MODE === 'development' ? '/' : 'frontgt/';
+const BASEPATH = import.meta.env.MODE === 'development' ? '/frontgt/' : 'frontgt/';
 
 const router = createBrowserRouter([
   {

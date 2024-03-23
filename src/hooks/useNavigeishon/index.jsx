@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { userService } from "../../services/user.service"
 
-const BASEPATH = import.meta.env.MODE === 'development' ? '/' : '/frontgt/'
+const BASEPATH = import.meta.env.MODE === 'development' ? '/frontgt/' : '/frontgt/'
 
 export default function useNavigeishon(){
     const navigate = useNavigate() 
