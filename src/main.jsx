@@ -11,9 +11,11 @@ import Users from './pages/Users/index.jsx';
 import Calendar from './pages/Calendar/index.jsx';
 import UserProfile from './pages/UserProfile/index.jsx';
 
+const BASEPATH = import.meta.env.MODE === 'development' ? '/' : 'frontgt/';
+
 const router = createBrowserRouter([
   {
-    path: "frontgt/",
+    path: BASEPATH,
     element: <App />,
     errorElement: <PageNotFound />,
     children: [
@@ -36,11 +38,11 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/register',
+    path: `${BASEPATH}register`,
     element: <Register />
   },
   {
-    path: 'login',
+    path: `${BASEPATH}login`,
     element: <Login />
   },
   {

@@ -7,12 +7,11 @@ import {userService} from "../../../services/user.service"
 import useNavigeishon from '../../../hooks/useNavigeishon';
 import { Link } from 'react-router-dom';
 
+const BASEPATH = import.meta.env.MODE === 'development' ? '' : 'frontgt/'
+
 export default function MiNavbar(){
     const navigeishon = useNavigeishon()
-
-    const userData = JSON.parse(navigeishon.userService.usuario)
-
-    //console.log(userData);
+    const userData = JSON.parse(navigeishon.userService.usuario) 
 
     function desconectar(){
         userService.logout()
@@ -32,7 +31,7 @@ export default function MiNavbar(){
                         <MdNotifications className='w-6 h-6 self-center  rounded-full cursor-not-allowed text-gray-400' />
                         <Dropdown arrowIcon={false} inline label={<FaUserCircle className='w-8 h-8 hover:opacity-80' />}>
                         <Dropdown.Header className='hover:bg-slate-300/20 cursor-pointer'>
-                            <Link to={'profile'}>
+                            <Link to={`${BASEPATH}profile`}>
                                 <span className="block text-sm">{userData.nombre}</span>
                                 <span className="block truncate text-sm font-medium">{userData.correo}</span>
                             </Link>
