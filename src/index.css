@@ -44,22 +44,8 @@ html {
   background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
 }
 
-/*:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[type="radio"]:checked {
+  background-image: url("./assets/img/iconcheck.svg");
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}*/
