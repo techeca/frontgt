@@ -1,8 +1,7 @@
 {
   "name": "frontgt",
   "private": true,
-  "version": "0.0.0",
-  "homepage": "https://techeca.github.io/frontgt/",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

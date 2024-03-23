@@ -13,7 +13,7 @@ import UserProfile from './pages/UserProfile/index.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "frontgt/",
     element: <App />,
     errorElement: <PageNotFound />,
     children: [
