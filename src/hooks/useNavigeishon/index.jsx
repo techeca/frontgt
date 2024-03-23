@@ -23,7 +23,7 @@ export default function useNavigeishon(){
                 navigate(`login`, { replace: true })
             }else{
             //localStorage.getItem('user') ? setIsLogged(true) : setIsLogged(false)
-            navigate(`/`, { replace: true })
+            navigate(`/frontgt${page}`, { replace: true })
         }
         return true
     }
