@@ -13,14 +13,14 @@ export default function useNavigeishon(){
     function checkPage(page){
         if(freePages.some(i => page.includes(i)) && localStorage.getItem('user')){
             //página permitida y ya tiene usuario
-            navigate(`${BASEPATH}dashboard`, { replace: true })
+            navigate(`/dashboard`, { replace: true })
         }else if(freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
             //página permitida y no tiene usuario
             navigate(page)
         }else if(!freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
             //página no permitida y no tiene usuario
-            console.log(page);
-            navigate(`${BASEPATH}login`, { replace: true })
+            //console.log(page);
+            navigate(`/login`, { replace: true })
         }else{
             //localStorage.getItem('user') ? setIsLogged(true) : setIsLogged(false)
             navigate(page, { replace: true })
