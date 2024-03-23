@@ -1,16 +1,17 @@
-import { Sidebar} from 'flowbite-react';
+import { Sidebar, Badge} from 'flowbite-react';
 import { HiChartPie, HiUser, HiViewBoards  } from 'react-icons/hi';
 import { MdSpaceDashboard, MdOutlinePets } from "react-icons/md";
 import { BiBuoy } from 'react-icons/bi';
 import { BsGearFill } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function MiSidebar(){
     return(
         <Sidebar className='border-b-[1px] border-r-[1px] font-regular lg:block hidden' aria-label="Sidebar">
             <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                    <Sidebar.Item href="#" className='' icon={MdSpaceDashboard}>
+                    <Sidebar.Item as={Link} to={'dashboard'} className='' icon={MdSpaceDashboard}>
                         Dashboard
                     </Sidebar.Item>
                             {/*<Sidebar.Collapse icon={HiShoppingBag} label="Agendamiento">
@@ -19,16 +20,18 @@ export default function MiSidebar(){
                                 <Sidebar.Item href="#">Refunds</Sidebar.Item>
                                 <Sidebar.Item href="#">Shipping</Sidebar.Item>
                             </Sidebar.Collapse>*/}
-                    <Sidebar.Item href="#" icon={FaCalendarAlt}>
-                        Agenda
+                    <Sidebar.Item as={Link} to={'calendar'} icon={FaCalendarAlt}>
+                        <div className='flex justify-between'>
+                            Agenda<Badge className='rounded-full font-[500]' color="failure" size="sm">5</Badge>
+                        </div>
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiUser}>
+                    <Sidebar.Item as={Link} to={'users'} icon={HiUser}>
                         Usuarios
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={MdOutlinePets }>
+                    <Sidebar.Item as={Link} to={'#'} icon={MdOutlinePets }>
                         Pacientes
                      </Sidebar.Item>
-                     <Sidebar.Item href="#" icon={BsGearFill}>
+                     <Sidebar.Item as={Link} to={'#'} icon={BsGearFill}>
                          Configuración
                       </Sidebar.Item>
                       {/*<Sidebar.Item href="#" icon={HiTable}>
@@ -36,13 +39,13 @@ export default function MiSidebar(){
                             </Sidebar.Item>*/}
                       </Sidebar.ItemGroup>
                       <Sidebar.ItemGroup>
-                      <Sidebar.Item href="#" icon={HiChartPie}>
+                      <Sidebar.Item as={Link} to={'#'} icon={HiChartPie}>
                                 Cambiar Plan
                      </Sidebar.Item>
-                          <Sidebar.Item href="#" icon={HiViewBoards}>
+                          <Sidebar.Item as={Link} to={'#'} icon={HiViewBoards}>
                                 Documentación
                       </Sidebar.Item>
-                      <Sidebar.Item href="#" icon={BiBuoy}>
+                      <Sidebar.Item as={Link} to={'#'} icon={BiBuoy}>
                                 Ayuda
                       </Sidebar.Item>
                       </Sidebar.ItemGroup>              

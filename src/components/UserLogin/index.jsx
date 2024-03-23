@@ -6,12 +6,12 @@ import LoginForm from '../forms/LoginForm';
 export default function UserLogin(){
 
     return(
-        <Card className="sm:max-w-lg w-[90%] sm:p-6">
+        <Card className="sm:max-w-lg w-[90%] sm:p-6 font-regular">
             <div>
                 <p className='font-semibold text-slate-700'>GatoCósmico</p>
             </div>
             <h1 className='text-center text-2xl font-bold mb-2 text-cyan-950'>Bienvenido</h1>
-            {<h2 className=''>¿No tienes cuenta? <a href='/register' className='text-cyan-700 hover:underline'>Regístrate</a></h2>}
+            {<h2 className=''>¿No tienes cuenta? <a href='/register' className='text-cyan-700/50 cursor-not-allowed'>Regístrate</a></h2>}
             <div>
                 <div className='flex flex-col gap-6'>
                     <Button disabled color={'light'} type='submit' className='cursor-not-allowed'>
