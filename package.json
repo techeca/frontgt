@@ -2,6 +2,7 @@
   "name": "frontgt",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://techeca.github.io/frontgt/",
   "type": "module",
   "scripts": {
     "dev": "vite",
