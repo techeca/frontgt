@@ -11,7 +11,7 @@ export default function useNavigeishon(){
 
     //Muy mejorable
     function checkPage(page){
-        console.log(page);
+        //console.log(page);
         if(freePages.some(i => page.includes(i)) && localStorage.getItem('user')){
             //página permitida y ya tiene usuario
             navigate("/dashboard", { replace: true })
@@ -24,7 +24,7 @@ export default function useNavigeishon(){
                 navigate(`login`, { replace: true })
             }else{
             //localStorage.getItem('user') ? setIsLogged(true) : setIsLogged(false)
-            navigate(`/${page}`, { replace: true })
+            navigate(`${page}`, { replace: true })
         }
         return true
     }
