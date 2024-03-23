@@ -13,17 +13,17 @@ export default function useNavigeishon(){
     function checkPage(page){
         if(freePages.some(i => page.includes(i)) && localStorage.getItem('user')){
             //página permitida y ya tiene usuario
-            navigate("frontgt/dashboard", { replace: true })
+            navigate("dashboard", { replace: true })
             }else if(freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
                 //página permitida y no tiene usuario
                 navigate(`/frontgt${page}`)
             }else if(!freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
                 //página no permitida y no tiene usuario
                 //console.log(page);
-                navigate(`frontgt/login`, { replace: true })
+                navigate(`login`, { replace: true })
             }else{
             //localStorage.getItem('user') ? setIsLogged(true) : setIsLogged(false)
-            navigate(`/frontgt/`, { replace: true })
+            navigate(`/`, { replace: true })
         }
         return true
     }
