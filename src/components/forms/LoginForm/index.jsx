@@ -40,7 +40,7 @@ export default function LoginForm(){
             return userService.login(correo.value, contrasena.value)
             .then(e => {
                 //console.log(`usuario: ${e}`);
-                navigaishon.checkPage('/dashboard')
+                navigaishon.checkPage('/frontgt/dashboard')
             }).catch(err => {
                 console.error(`Error: ${err}`);
             })
