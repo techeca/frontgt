@@ -15,7 +15,7 @@ export default function MiNavbar(){
 
     function desconectar(){
         userService.logout()
-        navigeishon.checkPage('/login')
+        navigeishon.checkPage('login')
     }
 
     return(
@@ -31,7 +31,7 @@ export default function MiNavbar(){
                         <MdNotifications className='w-6 h-6 self-center  rounded-full cursor-not-allowed text-gray-400' />
                         <Dropdown arrowIcon={false} inline label={<FaUserCircle className='w-8 h-8 hover:opacity-80' />}>
                         <Dropdown.Header className='hover:bg-slate-300/20 cursor-pointer'>
-                            <Link to={`${BASEPATH}profile`}>
+                            <Link to={`/profile`}>
                                 <span className="block text-sm">{userData.nombre}</span>
                                 <span className="block truncate text-sm font-medium">{userData.correo}</span>
                             </Link>
