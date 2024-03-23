@@ -17,13 +17,12 @@ function App() {
   return (
     <>
       {isLoad ?
-        navigeishon.userService.usuario ? 
         <DefaultLayout>
           <Outlet />
         </DefaultLayout>
-        :
-          <Outlet />
-      : <>Cargando . . .</>}
+      : 
+        <div className='absolute w-full h-full blur-[500px] opacity-40 bg-slate-400/70'></div>
+      }
     </>
   )
 }
