@@ -1,4 +1,4 @@
-import { Modal, Button, Accordion, Avatar, FileInput, Label, TextInput, Checkbox, Dropdown, Radio, ToggleSwitch  } from 'flowbite-react';
+import { Modal, Button, Accordion, Avatar, FileInput, Label, TextInput, Dropdown, Radio, ToggleSwitch  } from 'flowbite-react';
 import { GoPlus } from "react-icons/go";
 import { useState } from 'react';
 
@@ -7,7 +7,7 @@ export default function NewUser({openModal, setOpenModal}){
 
     return(
         <Modal className='font-regular' show={openModal} onClose={() => setOpenModal(false)}>
-        <Modal.Header>Agregar usuario</Modal.Header>
+        <Modal.Header>Agregar Usuario</Modal.Header>
         <Modal.Body className='p-0'>
             <Accordion className='rounded-none'>
                 <Accordion.Panel>

@@ -1,13 +1,11 @@
 import { Label, TextInput, Checkbox, Button } from "flowbite-react"
 import { useState } from "react"
 import { HiMail, HiLockClosed } from 'react-icons/hi'
-import useNavigeishon from "../../../hooks/useNavigeishon";
-import { userService } from "../../../services/user.service";
+import { Form } from "react-router-dom";
 
 export default function LoginForm(){
     const [correo, setCorreo] = useState({value:'', state: false});
     const [contrasena, setContrasena] = useState({value:'', state: false});
-    const navigaishon = useNavigeishon()
 
     function updateInput(e, fnUpdate){
         const inputValue = e.target.value
@@ -33,34 +31,32 @@ export default function LoginForm(){
         return colorsh
     }
 
-    function handleSubmit(e){
+    /*function handleSubmit(e){
         e.preventDefault()
         if(correo.state && contrasena.state){
-            //console.log('Campos válidos')
             return userService.login(correo.value, contrasena.value)
             .then(e => {
-                //console.log(`usuario: ${e}`);
-                navigaishon.checkPage('/frontgt/dashboard')
+                return redirect('/dashboard')
             }).catch(err => {
                 console.error(`Error: ${err}`);
             })
         }
-    }
+    }*/
 
     return(
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        <Form action="/login" method="post" className="flex flex-col gap-6">
             <div className='flex md:flex-row flex-col md:gap-6 gap-3'>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="txtCorreo" value="Correo" className='text-sm' />
                     </div>
-                    <TextInput className='' id="txtCorreo" helperText={<span className="">{correo.state ? '' : 'Correo incorrecto'}</span>} icon={HiMail} onChange={e => updateInput(e, setCorreo)} color={setColorInput(correo)} type="email" placeholder="nombre@correo.com" required />
+                    <TextInput className='' id="txtCorreo" name="correo" helperText={<span className="">{correo.state ? '' : 'Correo incorrecto'}</span>} icon={HiMail} onChange={e => updateInput(e, setCorreo)} color={setColorInput(correo)} type="email" placeholder="nombre@correo.com" required />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="txtContrasena" value="Contraseña" className='text-sm' />
                     </div>
-                    <TextInput id="txtContrasena" helperText={<span className="">{contrasena.state ? '' : 'Longitud incorrecta'}</span>} type="password" icon={HiLockClosed} onChange={e => updateInput(e, setContrasena)} color={setColorInput(contrasena)} placeholder='********' required />
+                    <TextInput id="txtContrasena" name="contrasena" helperText={<span className="">{contrasena.state ? '' : 'Longitud incorrecta'}</span>} type="password" icon={HiLockClosed} onChange={e => updateInput(e, setContrasena)} color={setColorInput(contrasena)} placeholder='********' required />
                 </div>
             </div>
             <div className="flex items-center justify-between">
@@ -71,6 +67,6 @@ export default function LoginForm(){
                 <a className='text-sm font-light hover:underline text-cyan-700/50 cursor-not-allowed'>Recuperar contraseña</a>
             </div>
             <Button type="submit">Enviar</Button>
-        </form>
+        </Form>
     )
 }

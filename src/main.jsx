@@ -1,23 +1,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
-import Register from './pages/Register/index.jsx';
-import Login from './pages/Login/index.jsx';
-import Dashboard from './pages/Dashboard/index.jsx';
-import PageNotFound from './pages/PageNotFound/index.jsx';
-import Users from './pages/Users/index.jsx';
-import Calendar from './pages/Calendar/index.jsx';
-import UserProfile from './pages/UserProfile/index.jsx';
+import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
+import {Register, Login, Dashboard, PageNotFound, Users, Calendar, UserProfile, Inventory, Clients, Patients} from './pages/index.jsx';
+import { userService } from './services/user.service.jsx';
 
-const BASEPATH = import.meta.env.MODE === 'development' ? 'frontgt/' : 'frontgt/';
+const userIsLoggedIn = async () => {
+  const user = localStorage.getItem('user')
+  if(user){
+    return redirect('/dashboard')
+  }
+  return null
+}
+
+const loginAction = async ({ /*params,*/ request}) => {
+  let fm = await request.formData()
+  const user = await userService.login(fm.get('correo'), fm.get('contrasena'))
+  if(user !== null){
+    return redirect('/dashboard'); 
+  }else{
+    return null
+  }
+}
 
 const router = createBrowserRouter([
   {
-    path: "/frontgt",
+    path: '/',
     element: <App />,
     errorElement: <PageNotFound />,
+    loader: async () => {
+      const user = localStorage.getItem('user')
+      if(!user) {
+        return redirect('/login')
+      }
+      return null
+    },
     children: [
       {
         path:'dashboard',
@@ -34,16 +52,31 @@ const router = createBrowserRouter([
       {
         path:'profile',
         element: <UserProfile />
+      },
+      {
+        path:'inventory',
+        element: <Inventory />
+      },
+      {
+        path:'clients',
+        element: <Clients />
+      },
+      {
+        path:'patients',
+        element: <Patients />
       }
     ]
   },
   {
-    path: `${BASEPATH}register`,
-    element: <Register />
+    path: `/register`,
+    element: <Register />,
+    loader: userIsLoggedIn,
   },
   {
-    path: `${BASEPATH}login`,
-    element: <Login />
+    path: `/login`,
+    element: <Login />,
+    loader: userIsLoggedIn,
+    action: loginAction,
   },
   {
     path: '*',

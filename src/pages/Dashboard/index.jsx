@@ -1,14 +1,8 @@
-import DefaultLayout from "../../components/layouts/DefaultLayout";
-import { Button, Card, Table, Badge, Checkbox } from "flowbite-react";
-import { FaCalendarAlt } from "react-icons/fa";
+import { Card, Table, Badge, Checkbox } from "flowbite-react";
 import LineChart from "../../components/charts/LineChart";
-import { FaChartLine } from "react-icons/fa";
-import { PiChartLineUpBold } from "react-icons/pi";
-import { PiChartLineDownBold } from "react-icons/pi";
+import { PiChartLineUpBold, PiChartLineDownBold } from "react-icons/pi";
 import { MdOutlineAttachMoney } from "react-icons/md";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { FaArrowUp } from "react-icons/fa6";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { FaPeopleGroup, FaArrowUp, FaArrowDownLong } from "react-icons/fa6";
 
 export default function Dashboard(){
 
@@ -125,7 +119,7 @@ export default function Dashboard(){
                             </Table.Row>
                             </Table.Body>
                         </Table>
-                        </div>
+                    </div>
                 </Card>
             </div>
         </div>

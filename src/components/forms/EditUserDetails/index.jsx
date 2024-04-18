@@ -1,5 +1,4 @@
-import { Label, TextInput, Checkbox, Button } from "flowbite-react"
-import { HiMail, HiLockClosed } from 'react-icons/hi'
+import { Label, TextInput, Button } from "flowbite-react"
 import { FaPhone } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";

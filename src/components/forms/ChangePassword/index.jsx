@@ -1,5 +1,5 @@
-import { Label, TextInput, Checkbox, Button } from "flowbite-react"
-import { HiMail, HiLockClosed } from 'react-icons/hi'
+import { Label, TextInput, Button } from "flowbite-react"
+import { HiLockClosed } from 'react-icons/hi'
 
 export default function ChangePassword(){
 

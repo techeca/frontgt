@@ -1,6 +1,4 @@
-import { Button, Card } from 'flowbite-react';
-import { FcGoogle } from "react-icons/fc";
-import { IoLogoGithub } from "react-icons/io5";
+import { Card } from 'flowbite-react';
 import RegisterForm from '../forms/RegisterForm';
 
 export default function UserRegister(){

@@ -1,11 +1,9 @@
-import { Card, Dropdown, TextInput, Radio, Label, Table, Checkbox, Badge, Breadcrumb, Button, Popover } from "flowbite-react";
+import { Card, Dropdown, Radio, Label, Table, Checkbox, Badge, Breadcrumb, Button, Popover } from "flowbite-react";
 import { BsThreeDots } from "react-icons/bs";
-import { BiSolidUserDetail } from "react-icons/bi";
+import { BiSolidUserDetail, BiSolidCommentDetail } from "react-icons/bi";
 import { FaUserEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import { BiSolidCommentDetail } from "react-icons/bi";
-import { FaDesktop } from "react-icons/fa6";
-import { FaUserDoctor } from "react-icons/fa6";
+import { FaUserDoctor, FaDesktop } from "react-icons/fa6";
 import { HiHome } from 'react-icons/hi';
 import { GoPlus } from "react-icons/go";
 import NewUser from "../../components/NewUser";

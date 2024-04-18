@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import ApexCharts from "apexcharts";
 import { Button } from "flowbite-react";
 import { FaCalendarAlt } from "react-icons/fa";
 
 export default function LineChart(){
     const [isLoad, setIsLoad] = useState(false)
-
-    const options = {
+    const memo = useMemo(() => {
+      const options = {
         chart: {
           height: "100%",
           maxWidth: "100%",
@@ -71,21 +71,20 @@ export default function LineChart(){
         yaxis: {
             opposite: true 
         }
-      } 
+      }
+      return options
+    }, [])
     
     useEffect(() => {
         if (document.getElementById("area-chart") && typeof ApexCharts !== 'undefined' && isLoad === false) {
             const countChart = document.getElementById("area-chart");
-            const chart = new ApexCharts(document.getElementById("area-chart"), options);
-            //console.log(countChart)
-            
+            const chart = new ApexCharts(document.getElementById("area-chart"), memo);
             if(countChart.childElementCount === 0){
                 chart.render();
                 setIsLoad(true);
             }
-            //chart.destroy()
         } 
-    }, [])
+    }, [memo, isLoad])
 
     return(         
         <div className="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">

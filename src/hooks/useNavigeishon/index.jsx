@@ -1,36 +1,41 @@
-import { useNavigate } from "react-router-dom"
-import { useState } from "react"
-import { userService } from "../../services/user.service"
+//import { userService } from "../../services/user.service"
 
-const BASEPATH = import.meta.env.MODE === 'development' ? '/frontgt/' : '/frontgt/'
+//const GITPAGE = true
+//const BASEPATH = GITPAGE ? '' : '/frontgt'
 
 export default function useNavigeishon(){
-    const navigate = useNavigate() 
-    const freePages = ['/login', '/register']
-    //const [isLogged, setIsLogged] = useState(false)
+    //const navigate = useNavigate() 
+    //const freePages = ['/login', '/register', '/']
 
     //Muy mejorable
-    function checkPage(page){
-        console.log(page);
-        if(freePages.some(i => page.includes(i)) && localStorage.getItem('user')){
+    /*function checkPage(page){
+        //console.log(page)
+        if(freePages.some(i => page === i)){
             //página permitida y ya tiene usuario
-            navigate("/dashboard", { replace: true })
-            }else if(freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
-                //página permitida y no tiene usuario
-                navigate(`/frontgt${page}`)
-            }else if(!freePages.some(i => page.includes(i)) && !localStorage.getItem('user')){
-                //página no permitida y no tiene usuario
-                //console.log(page);
-                navigate(`login`, { replace: true })
+            //console.log(page)
+            //console.log(userService.usuario);
+            if(userService.usuario){
+                navigate("/dashboard", { replace: true })
             }else{
-            //localStorage.getItem('user') ? setIsLogged(true) : setIsLogged(false)
+                navigate("/login", { replace: true })
+            }
+        }else if(freePages.some(i => page === i) && !userService.usuario){
+                //página permitida y no tiene usuario
+                navigate(`${BASEPATH}${page}`)
+        }else if(!freePages.some(i => page === i) && !userService.usuario){
+                //página no permitida y no tiene usuario
+                navigate(`${BASEPATH ? '/login' : '/login'}`, { replace: true })
+        }else{
+            //console.log(page)
+            if(page === '/' && freePages.some(i => page === i)){
+                //console.log(page)
+                navigate(`/dashboard}`, { replace: true })
+            }
             navigate(`${page}`, { replace: true })
         }
-        return true
-    }
+    }*/
 
     return {
-        checkPage,
-        userService
+        nones:'nones'
     }
 }

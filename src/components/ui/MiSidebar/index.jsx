@@ -5,8 +5,8 @@ import { BiBuoy } from 'react-icons/bi';
 import { BsGearFill } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-const BASEPATH = import.meta.env.MODE === 'development' ? '' : ''
+import { MdInventory } from "react-icons/md";
+import { FaIdCard } from "react-icons/fa6";
 
 export default function MiSidebar(){
     return(
@@ -22,16 +22,22 @@ export default function MiSidebar(){
                                 <Sidebar.Item href="#">Refunds</Sidebar.Item>
                                 <Sidebar.Item href="#">Shipping</Sidebar.Item>
                             </Sidebar.Collapse>*/}
-                    <Sidebar.Item as={Link} to={`calendar`} icon={FaCalendarAlt}>
-                        <div className='flex justify-between'>
-                            Agenda<Badge className='rounded-full font-[500]' color="failure" size="sm">5</Badge>
-                        </div>
-                    </Sidebar.Item>
                     <Sidebar.Item as={Link} to={`users`} icon={HiUser}>
                         Usuarios
                     </Sidebar.Item>
-                    <Sidebar.Item as={Link} to={'#'} icon={MdOutlinePets }>
+                    <Sidebar.Item as={Link} to={`calendar`} icon={FaCalendarAlt}>
+                        <div className='flex justify-between'>
+                            Agenda<Badge className='rounded-full font-[500] bg-red-400/50 text-red-800' size="sm">5</Badge>
+                        </div>
+                    </Sidebar.Item>
+                    <Sidebar.Item as={Link} to={'clients'} icon={FaIdCard}>
+                        Clientes
+                     </Sidebar.Item>
+                    <Sidebar.Item as={Link} to={'patients'} icon={MdOutlinePets}>
                         Pacientes
+                     </Sidebar.Item>
+                     <Sidebar.Item as={Link} to={'inventory'} icon={MdInventory}>
+                        Inventario
                      </Sidebar.Item>
                      <Sidebar.Item as={Link} to={'#'} icon={BsGearFill}>
                          Configuración
