@@ -1,0 +1,221 @@
+
+    {
+        "productos": [
+            {
+                "id":1, 
+                "nombre":"Comida para gatos 50g", 
+                "categoria":"Comida", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990, 
+                "vendidos":432, 
+                "cantidad":150, 
+                "estado":true,
+                "fechaIngreso": "",
+                "fechaVencimiento": false
+            },
+            {
+                "id":2, 
+                "nombre":"Comida para gatos 100g", 
+                "categoria":"Comida", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990, 
+                "vendidos":432, 
+                "cantidad":150, 
+                "estado":true,
+                "fechaIngreso": {"dia": 14, "febrero":1, "anio":2024},
+                "fechaVencimiento": [
+                    {
+                        "id": 1,
+                        "cantidad": 50,
+                        "fecha": {"dia": 14, "febrero":1, "anio":2024}
+                    },
+                    {
+                        "id": 2,
+                        "cantidad": 100,
+                        "fecha": {"dia": 24, "febrero":2, "anio":2025}
+                    }
+                ] 
+            },
+            {
+                "id":3, 
+                "nombre": "Comida para gatos 150g", 
+                "categoria":"Comida", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990, 
+                "vendidos":432, 
+                "cantidad":150, 
+                "estado":true,
+                "fechaIngreso": "",
+                "fechaVencimiento": false 
+            },
+            {
+                "id":4, 
+                "nombre":"Comida para gatos 200g", 
+                "categoria":"Comida", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990, 
+                "vendidos":432,
+                "cantidad":150, 
+                "estado":true,
+                "fechaIngreso": "",
+                "fechaVencimiento": false 
+            },
+            {
+                "id":5, 
+                "nombre":"Comida para perros 50g", 
+                "categoria":"Comida", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990, 
+                "vendidos":432, 
+                "cantidad":150, 
+                "estado":false,
+                "fechaIngreso": "",
+                "fechaVencimiento": false 
+            },
+            {
+                "id":6, 
+                "nombre":"Poster de gato", 
+                "categoria":"Juguete", 
+                "marca":"Felix", 
+                "proveedor":"Comidas para mascotas inc.", 
+                "costo":500, 
+                "precio":990,
+                "vendidos":432, 
+                "cantidad":150, 
+                "estado":true,
+                "fechaIngreso": "",
+                "fechaVencimiento": false 
+            }
+        ],
+        "usuarios": [
+            {
+                "id":1,
+                "nombre": "Jim",
+                "apellido": "Vásquez",
+                "correo": "usuario@correo.com",
+                "permisos": "Administrador",
+                "cargo": "Cajero",
+                "estado": true
+            },
+            {
+                "id":2,
+                "nombre": "Ely",
+                "apellido": "Cortes",
+                "correo": "usuaria@correo.com",
+                "permisos": "Veterinario",
+                "cargo": "Veterinaria",
+                "estado": true
+            }
+        ],
+        "agenda": [
+            {
+                "fecha":{
+                    "dia":2, 
+                    "anio":2024, 
+                    "mes":1
+                }, 
+                "cliente": "Jim Vásquez",
+                "mascota": "Cleo",
+                "hora": {
+                    "hora":10, 
+                    "min":0
+                },
+                "estado": true,
+                "idAtencion": 1
+            },
+            {
+                "fecha":{
+                    "dia":2, 
+                    "anio":2024, 
+                    "mes":1
+                }, 
+                "cliente": "Jim Vásquez",
+                "mascota": "Cleo",
+                "hora": {
+                    "hora":10, 
+                    "min":30
+                },
+                "estado": true,
+                "idAtencion": 2
+            }
+        ],
+        "clientes": [
+            {
+                "id": 1,
+                "nombres": "Jim",
+                "apellidos": "Vásquez",
+                "correo": "correo@cliente.com",
+                "contacto": "912345678"
+            },
+            {
+                "id": 2,
+                "nombres": "Ely",
+                "apellidos": "Cortes",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            },
+            {
+                "id": 3,
+                "nombres": "Ely",
+                "apellidos": "Cortes",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            },
+            {
+                "id": 4,
+                "nombres": "Ely",
+                "apellidos": "Cortes",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            },
+            {
+                "id": 5,
+                "nombres": "Ely",
+                "apellidos": "Cortes",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            }
+        ],
+        "pacientes": [
+            {
+                "id": 1,
+                "idCliente":2,
+                "nombre": "Zoe",
+                "apellido": "Cortes",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            },
+            {
+                "id": 2,
+                "idCliente": 1,
+                "nombre": "Cleo",
+                "apellido": "Vásquez",
+                "correo": "correo2@cliente2.com",
+                "contacto": "997654321"
+            }
+        ],
+        "atenciones": [
+            {
+                "id": 1,
+                "idPaciente":1,
+                "descripcion":"blablablablablablabl",
+                "servicios": [1,2,3,4]
+            }
+        ],
+        "configuracion": [
+            {
+                "agenda": {"": ""},
+                "inventario": {"": ""}
+            }
+        ]
+    }
