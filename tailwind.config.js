@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import flowbitePlugin from 'flowbite/plugin'
+import animated from 'tailwindcss-animated'
+
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}','node_modules/flowbite-react/lib/esm/**/*.js'],
   theme: {
@@ -10,16 +13,16 @@ export default {
         extralight: ['ExtraLight'],
         light: ['Light'],
         medium: ['Medium'],
-        regular: ['Regular'],
         semibold: ['SemiBold']
       },
       backgroundImage: {
-        'loginImage': "url('/frontgt/img/loginfondo.png)"
+        'loginImage': "url('/img/loginfondo.png)"
       }
     },
   },
-  plugins: [require('flowbite/plugin')({
-    charts: true
-  })],
+  plugins: [
+    flowbitePlugin({charts: true}),
+    animated
+],
 }
 
