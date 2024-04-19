@@ -6,14 +6,13 @@ on:
   pull_request:
     branches: [master]
     types: [opened, synchronize]
-  
-jobs:
 
+jobs:
   avoid_reduncy:
     runs-on: ubuntu-22.04
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action
+        uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
 
@@ -25,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: "npm"
           node-version: 18
       - name: Depedencias
         run: npm ci
@@ -41,7 +40,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: "npm"
           node-version: 18
       - name: Depedencias
         run: npm ci
@@ -51,7 +50,7 @@ jobs:
         with:
           name: dist
           path: dist
-  
+
   unit-test:
     needs: [build]
     runs-on: ubuntu-22.04
@@ -61,7 +60,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: "npm"
           node-version: 18
       - name: Depedencias
         run: npm ci
@@ -71,7 +70,7 @@ jobs:
           path: dist
       - name: Test
         run: npm run test
-  
+
   e2e-test:
     needs: [build]
     runs-on: ubuntu-22.04
@@ -81,7 +80,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          cache: "npm"
           node-version: 18
       - name: Depedencias
         run: npm ci
@@ -93,7 +92,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: e2e
         run: npm run e2e
-      
+
   deploy:
     needs: [unit-test, e2e-test]
     runs-on: ubuntu-22.04
