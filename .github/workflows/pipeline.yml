@@ -1,4 +1,4 @@
-name: Despliegue de Pipeline
+name: Despliegue
 
 on:
   push:
@@ -27,3 +27,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: e2e
         run: npm run e2e
+      - name: DigitalOcean App Platform deployment
+        uses: digitalocean/app_action@v1.1.5
+        with:
+          app_name: ${{ secrets.NAME_APP }}
+          token: ${{ secrets.ACTION_KEY_COSMICCAT }}
