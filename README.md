@@ -1,6 +1,7 @@
 # GatoCósmico
 
-[![Despliegue de Pipeline](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml)
+[![Despliegue de Pipeline](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml)\
+
 Estructura y configuración básica para frontend. 
 
 ### Instalación e inicio
