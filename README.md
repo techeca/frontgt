@@ -1,6 +1,6 @@
 # GatoCósmico
 
-[![Despliegue de Pipeline](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml)\
+[![Despliegue de Pipeline](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml/badge.svg?branch=master)](https://github.com/techeca/frontgt/actions/workflows/pipeline.yml)
 
 Estructura y configuración básica para frontend. 
 
@@ -23,11 +23,13 @@ npm run test
 npm run e2e 
 ```
 
-### Online
+### Reportes
+```bash
+npm run coverage
+npm run report 
+```
 
-Web estática en fleek: [VER](https://cosmic-cat.on-fleek.app)
-
-#### Regla para comentario
+### Regla para comentario
 
 > [!NOTE]
 > ADD: Nuevo componente, funcion, página u otros.\

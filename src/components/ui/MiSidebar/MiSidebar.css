@@ -1,0 +1,8 @@
+.sideOpen {
+    opacity: 1;
+    transition: width 1s;
+}
+
+.sideClose {
+    transition: width 2s;
+}

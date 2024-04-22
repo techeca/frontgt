@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider, redirect } from "react-router-dom";
 import {Register, Login, Dashboard, PageNotFound, Users, Calendar, UserProfile, Inventory, Clients, Patients} from './pages/index.jsx';
-import { userService } from './services/user.service.jsx';
+//import { userService } from './services/user.service.jsx';
 
 const userIsLoggedIn = async () => {
   const user = localStorage.getItem('user')
@@ -12,16 +12,6 @@ const userIsLoggedIn = async () => {
     return redirect('/dashboard')
   }
   return null
-}
-
-const loginAction = async ({ /*params,*/ request}) => {
-  let fm = await request.formData()
-  const user = await userService.login(fm.get('correo'), fm.get('contrasena'))
-  if(user !== null){
-    return redirect('/dashboard'); 
-  }else{
-    return null
-  }
 }
 
 const router = createBrowserRouter([
@@ -76,7 +66,7 @@ const router = createBrowserRouter([
     path: `/login`,
     element: <Login />,
     loader: userIsLoggedIn,
-    action: loginAction,
+    action: Login.action,
   },
   {
     path: '*',

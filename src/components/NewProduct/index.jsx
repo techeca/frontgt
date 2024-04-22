@@ -1,7 +1,6 @@
 import { Modal, Button} from 'flowbite-react';
 import { GoPlus } from "react-icons/go";
 import NewProductForm from '../forms/NewProductForm';
-import PropTypes from 'prop-types'
 
 export default function NewProduct({openModal, setOpenModal}){
 
@@ -19,9 +18,4 @@ export default function NewProduct({openModal, setOpenModal}){
         </Modal.Footer>
       </Modal>
     )
-}
-
-NewProduct.PropTypes = {
-    openModal: PropTypes.string,
-    setOpenModal: PropTypes.func
 }
